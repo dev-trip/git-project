@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Product</title>
+	<script
+			  src="https://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+	<script>
+		$(document).ready(function() {
+    $('.product__quanity-minus').click(function () {
+        var $input = $(this).parent().find('input');
+        var count = parseInt($input.val()) - 1;
+        count = count < 1 ? 1 : count;
+        $input.val(count);
+        $input.change();
+        return false;
+    });
+    $('.product__quanity-plus').click(function () {
+        var $input = $(this).parent().find('input');
+        $input.val(parseInt($input.val()) + 1);
+        $input.change();
+        return false;
+    });
+});
+	</script>
+</head>
+<body>
+	<div class="product">
+		<h3 class="product__name">Стол эргономичный правый</h3>
+		<div class="product__article">
+			<span class="product__article-head">Артикул</span>
+			<span class="product__article-value">BuESDP1484 Right</span>
+		</div>
+		<div class="product__size">
+			<span class="product__size-head">ШхГхВ</span>
+			<span class="product__size-value">1400 х 800 х 750 мм</span>
+		</div>
+		<img src="25.jpg" alt="alt" class="product__image">
+		<div class="product__description-wrapper">
+		    <div class="product__description-text">
+		        <h4 class="product__material">Бук Греческий</h4>
+			    <span class="product__state">Под заказ</span>
+		    </div>
+			<div class="product__color product__color--beech-greek"></div>
+		</div>
+		<div class="product__description-wrapper">
+		    <div class="product__description-text">
+		        <h4 class="product__material">Орех греческий</h4>
+			    <span class="product__state">Под заказ</span>
+		    </div>
+			<div class="product__color product__color--nut-greek"></div>
+		</div>
+		<div class="product__description-wrapper">
+		    <div class="product__description-text">
+		        <h4 class="product__material">Орех французския</h4>
+			    <span class="product__state">Под заказ</span>
+		    </div>
+			<div class="product__color product__color--nut-french"></div>
+		</div>
+		<div class="product__pirce-wrapper">
+			        <span class="product__price">18890.-</span>
+			        <span class="product__old-price">24300</span>
+        </div>
+		<div class="product__quantity">
+			<div class="product__quanity-minus">-</div>
+			<input type="text" class="product__quanity-value" value="1">
+			<div class="product__quanity-plus">+</div>
+		</div>
+		<button class="product__to-basket-button">В корзину</button>
+	</div>
+</body>
+</html>
