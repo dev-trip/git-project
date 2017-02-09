@@ -1,16 +1,25 @@
-$(document).ready(function() {
-    $('.product__quanity-minus').click(function () {
+$(document).ready(function(){
+
+    $('.product__quanity-minus').on('click', function(){
         var $input = $(this).parent().find('input');
         var count = parseInt($input.val()) - 1;
         count = count < 1 ? 1 : count;
         $input.val(count);
         $input.change();
-        return false;
     });
-    $('.product__quanity-plus').click(function () {
+    $('.product__quanity-plus').on('click', function(){
         var $input = $(this).parent().find('input');
         $input.val(parseInt($input.val()) + 1);
         $input.change();
-        return false;
     });
-});
+    $('.product__quanity-plus').on('mousedown', function(event){
+        event.preventDefault();
+    });
+    $('.product__quanity-minus').on('mousedown', function(event){
+        event.preventDefault();
+    });
+    $('.product__quanity-value').on('keydown', function(event){
+        event.preventDefault();
+    });
+
+})
